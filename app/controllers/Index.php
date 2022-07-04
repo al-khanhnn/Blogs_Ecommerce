@@ -10,9 +10,7 @@ class Index extends ParentController
     public function homePage()
     {
         $this->load->view('header');
-        $homeModel = $this->load->model('HomeModel');
-        $data['categories'] = $homeModel->category();
-        $this->load->view('home',$data);
+        $this->load->view('home');
         $this->load->view('footer');
     }
 }
