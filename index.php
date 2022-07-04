@@ -11,11 +11,9 @@
 <body>
     <h1>
         <?php
-        include_once('system/libraries/Database.php');
-        include_once('system/libraries/Load.php');
-        include_once('system/libraries/Main.php');
-        include_once('system/libraries/ParentController.php');
-        include_once('system/libraries/ParentModel.php');
+        spl_autoload_register(function ($class) {
+            include_once 'system/libraries/' . $class . '.php';
+        });
 
         if (isset($_GET['url']) && !empty($_GET['url'])) {
             $url = $_GET['url'];
