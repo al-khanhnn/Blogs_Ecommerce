@@ -14,6 +14,7 @@
         spl_autoload_register(function ($class) {
             include_once 'system/libraries/' . $class . '.php';
         });
+        include_once 'app/config/config.php';
 
         if (isset($_GET['url']) && !empty($_GET['url'])) {
             $url = $_GET['url'];
