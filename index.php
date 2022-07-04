@@ -14,7 +14,6 @@
         include_once('system/libraries/Main.php');
         include_once('system/libraries/ParentController.php');
         include_once('system/libraries/Load.php');
-        $main = new Main();
 
         if (isset($_GET['url']) && !empty($_GET['url'])) {
             $url = $_GET['url'];
