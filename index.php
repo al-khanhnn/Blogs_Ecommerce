@@ -16,27 +16,7 @@
         });
         include_once 'app/config/config.php';
 
-        if (isset($_GET['url']) && !empty($_GET['url'])) {
-            $url = $_GET['url'];
-            $rtrimUrl = rtrim($url, '/');
-            $arrayUrl = explode('/', filter_var($rtrimUrl, FILTER_SANITIZE_URL));
-
-            if (isset($arrayUrl[0])) {
-                include_once('app/controllers/' . $arrayUrl[0] . '.php');
-                $controller = new $arrayUrl[0]();
-                if (isset($arrayUrl[1])) {
-                    if (isset($arrayUrl[2])) {
-                        $controller->{$arrayUrl[1]}($arrayUrl[2]);
-                    } else {
-                        $controller->{$arrayUrl[1]}();
-                    }
-                }
-            }
-        } else {
-            include_once('app/controllers/Index.php');
-            $index = new Index();
-            $index->homePage();
-        }
+        $main = new Main();
         ?>
     </h1>
 </body>
